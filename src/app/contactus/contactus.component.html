@@ -1,0 +1,39 @@
+
+    <div class="row clearfix">
+
+      <div class="container">
+          <div class="center-form panel">
+              <div class="panel-body">
+             <a (click)=cancel()><i class="ui-icon-close"></i>close</a>
+                <h4 class="text-center"><i class="ion-edit"></i> </h4>
+    
+                <form [formGroup]="contactusForm" (ngSubmit)="sendMessage(contactusForm.value)">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-lg form-names" formControlName="firstName" name="lastname" placeholder="First name">
+                        <input type="text" class="form-control input-lg form-names" formControlName="lastName" name="lastname" placeholder="Last Name">
+                        <span class="ion-person form-control-icon"></span>                                          
+                      </div>                          
+
+                  <div class="form-group">
+                    <input type="text" class="form-control input-lg" formControlName="email" name="email" placeholder="Email">
+                    <span class="ion-at form-control-icon"></span>
+                  </div>
+                  <div class="form-group">
+                    <textarea rows="10" cols="100" class="form-control input-lg" formControlName="password" name="password" placeholder="Password">
+
+                    </textarea>
+                    <span class="ion-edit form-control-icon"></span>
+                  </div>
+                  
+                  <button *ngIf="!sending" type="submit" [class.disabled]="!contactusForm.valid" class="btn btn-block btn-success">Send</button>
+                 
+                  <br/>
+    
+                  
+                </form>
+
+            </div>
+        </div>
+      </div>
+    </div>
+
