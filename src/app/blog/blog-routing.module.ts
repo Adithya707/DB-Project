@@ -11,11 +11,10 @@ const routes: Routes = [
   {path: '', component: BlogPageComponent},
   {path: 'article-buy/:id', component: ArticleBuyComponent},
   {path: 'article/:id', component: ArticleComponent},
-  {path: 'article-edit/:id/:title/:image/:publishdate/:excert', component: ArticleEditComponent},
-  {path: 'article/:id/article/:id/article-edit/:id', component: ArticleEditComponent},
-  {path: 'article-create/:id/:title/:image/:publishdate/:excert', component: ArticleBuyComponent},
+  {path: 'article-edit/:id/:title/:author/:image/:publishdate/:excert', component: ArticleEditComponent},
+  {path: 'article-buy/:id/:title/:author/:image/:publishdate/:excert', component: ArticleBuyComponent},
   {path: 'article-delete/:id', component: ArticleDeleteComponent},
-  {path: 'article-buy/:id', component: ArticleDeleteComponent},
+  {path: 'article-buy/:id', component: ArticleBuyComponent},
 ];
 
 @NgModule({

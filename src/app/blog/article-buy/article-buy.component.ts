@@ -26,12 +26,13 @@ export class ArticleBuyComponent implements OnInit {
     this.postEditForm = this.fb.group({
       'id' : [null, Validators.required],
       'title' : [null, Validators.required],
-      'author' : [null, Validators.required],
+      'author' : [this.getAuthor(), Validators.required],
       'publishdate' : [null, Validators.required],
       'excert' : [null, Validators.required],
       'image' : [null, Validators.required],
     });
     this.id = this.route.snapshot.params['id'] || null ;
+    this.title = this.route.snapshot.params['title'] || null ;
     this.author = this.route.snapshot.params['author'] || null ;
     this.image = this.route.snapshot.params['image'] || null ;
     this.publishdate = this.route.snapshot.params['publishdate'] || null ;
@@ -68,5 +69,10 @@ export class ArticleBuyComponent implements OnInit {
 
   getBack() {
     this.location.back();
+  }
+
+
+  getAuthor() {
+    return this.auth.getUser()['id'];
   }
 }

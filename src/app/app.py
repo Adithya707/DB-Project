@@ -62,11 +62,11 @@ class ArticleEdit(Resource):
          return jsonify(ud);
 
 class ArticleCreate(Resource):
-    def get(self,idi,title,image,publishdate,excert):
+    def get(self,idi,title,author,image,publishdate,excert):
          cur=mysql.connection.cursor()
          
          result=[]
-         params=str(idi), str(title), str('Akash'), str(image), str(publishdate), str(excert)
+         params=str(idi), str(title), str(author), str(image), str(publishdate), str(excert)
          query=cur.execute("insert into bl values(%s,%s,%s,%s,%s,%s)",(params))
          mysql.connection.commit()
          con=mysql.connection.cursor()
@@ -86,9 +86,9 @@ class ArticleEdit1(Resource):
 
                  
 class Articlefind(Resource):
-    def get(self, Article_id,title,image,publishdate,excert):
+    def get(self, Article_id,title,author,image,publishdate,excert):
        cur=mysql.connection.cursor()
-       params=Article_id ,title ,'Akash' ,image ,publishdate ,excert
+       params=[str(Article_id)] ,[str(title)] ,[str(author)] ,[str(image)] ,[str(publishdate)] ,[str(excert)]
        resultval=cur.execute("insert into bl values(%s,%s,%s,%s,%s,%s)",(params))
        mysql.connection.commit()
        cur.close()       
@@ -99,8 +99,8 @@ api.add_resource(BlogPage,'/Blog') # Route_1
 api.add_resource(ArticleDelete,'/Blog/article-delete/<string:Article_id>') # Route_1
 api.add_resource(ArticleEdit,'/Blog/article-edit/<string:idi>/<string:title>/<string:author>/<string:image>/<string:publishdate>/<string:excert>') # Route_1
 api.add_resource(ArticleEdit1,'/Blog/article/<string:idi>')
-api.add_resource(Articlefind,'/Blog/article-buy/<string:Article_id>/<string:title>/<string:image>/<string:publishdate>/<string:excert>') 
-api.add_resource(ArticleCreate,'/Blog/article-create/<string:idi>/<string:title>/<string:image>/<string:publishdate>/<string:excert>') 
+api.add_resource(Articlefind,'/Blog/article-buy/<string:Article_id>/<string:title>/<string:author>/<string:image>/<string:publishdate>/<string:excert>') 
+api.add_resource(ArticleCreate,'/Blog/article-create/<string:idi>/<string:title>/<string:author>/<string:image>/<string:publishdate>/<string:excert>') 
 
 if __name__ == '__main__':
    app.run(port=5002,debug=True)
