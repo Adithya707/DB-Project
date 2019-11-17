@@ -95,9 +95,9 @@ export class InMemoryDataService implements InMemoryDbService {
       {id: 5, title: 'Testimonials', link: '/Testimonials', outlet: ''},
       {id: 6, title: 'Clients', link: '/Clients', outlet: ''},
       {id: 7, title: 'Pricing', link: '/Pricing', outlet: ''},
-      {id: 8, title: 'Blog', link: '/Blog', outlet: ''},
+      {id: 8, title: 'Mobile', link: '/Blog', outlet: ''},
+      {id: 8, title: 'Laptop', link: '/Blog1', outlet: ''},
       {id: 9, title: 'Contact Us', link: 'contactus', outlet: 'popup'},
-      {id: 10, title: 'Subscribe', link: 'subscribe', outlet: 'popup'},
     ];
 
     const posts = [

@@ -47,6 +47,15 @@ export class ConfigService {
     );
   }
 
+  getPoosts(id:number): Observable<Post[]> {
+    return this.http.get<any>('http://127.0.0.1:5002/Blog1/article/'+String(id)).pipe(
+      tap(
+        post => console.log(post)
+      ),
+      catchError(this.handleError('Get Posts', []))
+    );
+  }
+
   getSettings(database: string, id?: any): Observable<any[]> {
     let uid = id || null;
     let url: string;
@@ -81,6 +90,14 @@ export class ConfigService {
       catchError(this.handleError('Update Post', []))
     );
   }
+  updatePooost(formData: NgForm,id:number,title:string,author:string,image:string,publishdate:string,excert:string): Observable<Post> {
+    return this.http.get<any>('http://127.0.0.1:5002/Blog1/article-edit/'+String(id)+'/'+String(title)+'/'+String(author)+'/'+String(image)+'/'+String(publishdate)+'/'+String(excert)).pipe(
+      tap(
+        post => console.log(post)
+      ),
+      catchError(this.handleError('Update Post', []))
+    );
+  }
 
   deletePost(formData: NgForm,id:number): Observable<Post> {
      
@@ -92,10 +109,32 @@ export class ConfigService {
     );
   }
 
+  deletePoost(formData: NgForm,id:number): Observable<Post> {
+     
+    return this.http.get<any>('http://127.0.0.1:5002/Blog1/article-delete/'+String(id)).pipe(
+      tap(
+        post => console.log(post)
+      ),
+      catchError(this.handleError('Update Post', []))
+    );
+  }
+
+
 
   buyPost(id:number,title:string,author:string,image:string,publishdate:string,excert:string): Observable<Post> {
      
     return this.http.get<any>('http://127.0.0.1:5002/Blog/article-buy/'+String(id)+'/'+String(title)+'/'+String(author)+'/'+String(image)+'/'+String(publishdate)+'/'+String(excert)).pipe(
+      tap(
+        post => console.log(post)
+      ),
+      catchError(this.handleError('Update Post', []))
+    );
+  }
+
+
+  buyPoost(id:number,title:string,author:string,image:string,publishdate:string,excert:string): Observable<Post> {
+     
+    return this.http.get<any>('http://127.0.0.1:5002/Blog1/article-buy/'+String(id)+'/'+String(title)+'/'+String(author)+'/'+String(image)+'/'+String(publishdate)+'/'+String(excert)).pipe(
       tap(
         post => console.log(post)
       ),
@@ -120,5 +159,14 @@ export class ConfigService {
       catchError(this.handleError('Get Post by ID', []))
     );
   }
+  getPoostByID(id: number) {
+    return this.http.get<any>('http://127.0.0.1:5002/Blog1/article/'+String(id)).pipe(
+      tap(
+        post => console.log(post)
+      ),
+      catchError(this.handleError('Get Post by ID', []))
+    );
+  }
+
 
 }

@@ -25,7 +25,7 @@ import { ClientsModule } from './clients/clients.module';
 import { TestimonialModule } from './testimonial/testimonial.module';
 import { PricingModule } from './pricing/pricing.module';
 import { BlogModule } from './blog/blog.module';
-
+import { Blog1Module } from './blog1/blog1.module'
 
 const routes: Routes = [
   {path:'',redirectTo:'/Home',pathMatch:'full'},
@@ -41,7 +41,7 @@ const routes: Routes = [
    {path:'Pricing',loadChildren:()=>PricingModule},
    {path:'subscribe',component:SubscribeComponent,outlet:"popup"},
    {path:'dashboard',loadChildren:() => UserDashboardModule,canActivate:[RoutegaurdService]},
-
+   { path: 'Blog1', loadChildren: () => Blog1Module, canActivate: [RoutegaurdService] },
    { path: 'Blog', loadChildren: () => BlogModule, canActivate: [RoutegaurdService] },
    {path:'404',loadChildren:()=>NotfoundModule},
    {path:'**',redirectTo:'/404'},

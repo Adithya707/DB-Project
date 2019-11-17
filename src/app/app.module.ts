@@ -33,6 +33,7 @@ import { TestimonialModule } from './testimonial/testimonial.module';
 import { PricingModule } from './pricing/pricing.module';
 import { BlogModule } from './blog/blog.module';
 import { WebsiteBlockComponent } from './website-block/website-block.component';
+import { Blog1Module } from './blog1/blog1.module';
 
 
 
@@ -51,6 +52,7 @@ import { WebsiteBlockComponent } from './website-block/website-block.component';
     WebsiteBlockComponent,
   ],
   imports: [
+    Blog1Module,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
