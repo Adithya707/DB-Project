@@ -43,12 +43,12 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {id: 'gallery',
         tagline: 'We ❤ Doing amazing things',
-        title: 'AdMISTER STUDIO',
+        title: 'AdTushar STUDIO',
         description: 'We are and amazing company',
       },
       {id: 'footer',
-        copyrighttext: 'Made with ❤ by',
-        developer: 'AdMISTER STUDIO',
+        copyrighttext: 'Made with ❤ and sheer Hardwork',
+        developer: 'AdiTushar STUDIO',
         developerlink: 'http://admister.in',
       },
       {id: 'blog',
@@ -57,10 +57,10 @@ export class InMemoryDataService implements InMemoryDbService {
         description: 'We are and amazing company',
       },
       {id: 'header',
-        heading: 'AdMister Studios',
-        headingtext: 'This website was created using Angular 6',
-        buttontext: 'do some action!',
-        buttonlink: '/home',
+        heading: 'AdiTushar Studios',
+        headingtext: 'This website was created using Angular 8',
+        buttontext: 'Do some action!',
+        buttonlink: '/Home',
         image: 'banner-image-1.jpg'
       },
     ];
@@ -69,11 +69,11 @@ export class InMemoryDataService implements InMemoryDbService {
     const features = [
       {id: 1, icon: 'html5', title: 'HTML5 & CSS3',
       description: 'Has ne tritani atomorum conclusionemque, in dolorum volumus cotidieque eum. At vis choro neglegentur iudico'},
-      {id: 2, icon: 'bolt', title: 'Easy to Use',
+      {id: 2, icon: 'bolt', title: 'PYTHON 2',
       description: 'Cu vero ipsum vim, doctus facilisi sea in. Eam ex falli honestatis repudiandae, sit detracto mediocrem disputationi'},
-      {id: 3, icon: 'tablet', title: 'Fully Responsive',
+      {id: 3, icon: 'tablet', title: 'MYSQl DB',
       description: 'Id porro tritani recusabo usu, eum intellegam consequuntur et. Fugit debet ea sit, an pro nemore vivendum'},
-      {id: 4, icon: 'rocket', title: 'Parallax Effect',
+      {id: 4, icon: 'rocket', title: 'ANGULAR',
       description: 'Id porro tritani recusabo usu, eum intellegam consequuntur et. Fugit debet ea sit, an pro nemore vivendum'},
   ];
 
@@ -126,15 +126,15 @@ export class InMemoryDataService implements InMemoryDbService {
   ];
 
   const companies = [
-    {id: 1 , name: 'Tree', weblink: 'company-logo1.png', logo: 'company-logo1.png'},
-    {id: 2 , name: 'Fingerprint', weblink: 'company-logo2.png', logo: 'company-logo2.png'},
-    {id: 3 , name: 'The Man', weblink: 'company-logo3.png', logo: 'company-logo3.png'},
-    {id: 4 , name: 'Mustache', weblink: 'company-logo4.png', logo: 'company-logo4.png'},
-    {id: 5 , name: 'Goat', weblink: 'company-logo5.png', logo: 'company-logo5.png'},
-    {id: 6 , name: 'Justice', weblink: 'company-logo6.png', logo: 'company-logo6.png'},
-    {id: 7 , name: 'Ball', weblink: 'company-logo7.png', logo: 'company-logo7.png'},
-    {id: 8 , name: 'Cold', weblink: 'company-logo8.png', logo: 'company-logo8.png'},
-    {id: 9 , name: 'Cold', weblink: 'company-logo9.png', logo: 'company-logo9.png'},
+    {id: 1 , name: '1:Tree', weblink: 'company-logo1.png', logo: 'company-logo1.png'},
+    {id: 2 , name: '2:Fingerprint', weblink: 'company-logo2.png', logo: 'company-logo2.png'},
+    {id: 3 , name: '3:The Man', weblink: 'company-logo3.png', logo: 'company-logo3.png'},
+    {id: 4 , name: '4:Mustache', weblink: 'company-logo4.png', logo: 'company-logo4.png'},
+    {id: 5 , name: '5:Goat', weblink: 'company-logo5.png', logo: 'company-logo5.png'},
+    {id: 6 , name: '6:Justice', weblink: 'company-logo6.png', logo: 'company-logo6.png'},
+    {id: 7 , name: '7:Ball', weblink: 'company-logo7.png', logo: 'company-logo7.png'},
+    {id: 8 , name: '8:Cold', weblink: 'company-logo8.png', logo: 'company-logo8.png'},
+    {id: 9 , name: '9:Apple', weblink: 'company-logo9.png', logo: 'company-logo9.png'},
 ];
 const feedbacks = [
   {id: 1 , name: 'John Doe', userimage: 'user-1.jpg',

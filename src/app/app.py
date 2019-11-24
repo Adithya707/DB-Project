@@ -115,10 +115,10 @@ class ArticleEdit3(Resource):
          
                  
 class Articlefind(Resource):
-    def get(self, Article_id,title,author,image,publishdate,excert):
+    def get(self, Article_id,title,author,image,publishdate,excert,price):
        cur=mysql.connection.cursor()
-       params=[str(Article_id)] ,[str(title)] ,[str(author)] ,[str(image)] ,[str(publishdate)] ,[str(excert)]
-       resultval=cur.execute("insert into bl values(%s,%s,%s,%s,%s,%s)",(params))
+       params=[str(Article_id)] ,[str(title)] ,[str(author)] ,[str(image)] ,[str(publishdate)] ,[str(excert)] ,[str(price)]
+       resultval=cur.execute("insert into bl values(%s,%s,%s,%s,%s,%s,%s)",params)
        mysql.connection.commit()
        cur.close()       
 
@@ -143,7 +143,7 @@ api.add_resource(BlogPage,'/Blog') # Route_1
 api.add_resource(ArticleDelete,'/Blog/article-delete/<string:Article_id>') # Route_1
 api.add_resource(ArticleEdit,'/Blog/article-edit/<string:idi>/<string:title>/<string:author>/<string:image>/<string:publishdate>/<string:excert>') # Route_1
 api.add_resource(ArticleEdit1,'/Blog/article/<string:idi>')
-api.add_resource(Articlefind,'/Blog/article-buy/<string:Article_id>/<string:title>/<string:author>/<string:image>/<string:publishdate>/<string:excert>') 
+api.add_resource(Articlefind,'/Blog/article-buy/<string:Article_id>/<string:title>/<string:author>/<string:image>/<string:publishdate>/<string:excert>/<string:price>') 
 api.add_resource(ArticleCreate,'/Blog/article-create/<string:idi>/<string:title>/<string:author>/<string:image>/<string:publishdate>/<string:excert>') 
 
 api.add_resource(ArticleDelete1,'/Blog1/article-delete/<string:Article_id>') # Route_1

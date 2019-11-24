@@ -7,7 +7,11 @@ export class Post{
         public publishdate:string,
         public excert:string,
         public image?:string,
-        
+        public oid?:string,
+        public comp_id?:string,
+        public odate?:string,
+        public rating?:string,
+        public price?:string
     ){
 
     }

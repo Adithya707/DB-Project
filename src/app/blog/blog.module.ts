@@ -17,6 +17,7 @@ import { ConfigService } from '../config.service';
 import { AuthenticationService } from '../authentication.service';
 import { ArticleDeleteComponent } from './article-delete/article-delete.component';
 import { ArticleBuyComponent } from './article-buy/article-buy.component';
+import { ArticleRateComponent } from './article-rate/article-rate.component';
 
 @NgModule({
   imports: [
@@ -40,7 +41,7 @@ import { ArticleBuyComponent } from './article-buy/article-buy.component';
     })
 
   ],
-  declarations: [BlogPageComponent, ArticleComponent, ArticleCreateComponent, ArticleEditComponent, PostBlockComponent, PaginationComponent, ArticleDeleteComponent, ArticleBuyComponent],
+  declarations: [BlogPageComponent, ArticleComponent, ArticleCreateComponent, ArticleEditComponent, PostBlockComponent, PaginationComponent, ArticleDeleteComponent, ArticleBuyComponent, ArticleRateComponent],
   providers:[ConfigService,AuthenticationService,RoutegaurdService]
 })
 export class BlogModule { }

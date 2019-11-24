@@ -34,6 +34,7 @@ import { PricingModule } from './pricing/pricing.module';
 import { BlogModule } from './blog/blog.module';
 import { WebsiteBlockComponent } from './website-block/website-block.component';
 import { Blog1Module } from './blog1/blog1.module';
+import { ArticleRateComponent } from './article-rate/article-rate.component';
 
 
 
@@ -50,6 +51,7 @@ import { Blog1Module } from './blog1/blog1.module';
     NavmenuComponent,
     SubscribeComponent,
     WebsiteBlockComponent,
+    ArticleRateComponent,
   ],
   imports: [
     Blog1Module,

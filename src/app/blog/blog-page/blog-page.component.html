@@ -8,7 +8,7 @@
                  
               </div>
               <div *ngFor="let post of pages" class="post-block col-3 wow fadeInUp" data-wow-delay="0.4s">
-               <a routerLink="article-buy/{{post.id}}/{{post.title}}/{{post.author}}/{{post.image}}/{{post.publishdate}}/{{post.excert}}" class="button" id="add-button">Add<i class="ion ion-plus"></i></a>
+               <a routerLink="article-buy/{{post.id}}/{{post.title}}/{{post.author}}/{{post.image}}/{{post.publishdate}}/{{post.excert}}/{{post.price}}" class="button" id="add-button">Add<i class="ion ion-plus"></i></a>
               
                 <app-post-block [post]="post"></app-post-block>
               </div>
