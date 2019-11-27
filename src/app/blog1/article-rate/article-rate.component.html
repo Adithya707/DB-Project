@@ -5,9 +5,9 @@
 
       <div class="panel">
         <div class="panel-body">
-        <h4 class="text-center"><i class="ion-log-in"></i> Buy the post</h4>
+        <h4 class="text-center"><i class="ion-log-in"></i> Rate the post</h4>
 
-        <form class="icon" [formGroup]="postEditForm" (ngSubmit)="ratePost(postEditForm.value)">
+        <form class="icon" [formGroup]="postEditForm" (ngSubmit)="ratePoost(postEditForm.value)">
           <div class="form-group">
               <input type="text" class="form-control input-lg" name="id" placeholder="Id" formControlName="id" [(ngModel)]="this.id">
               <span class="ion-at form-control-icon"></span> 
@@ -38,5 +38,3 @@
     </div>
 
   </div>
-
-

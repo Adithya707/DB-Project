@@ -23,18 +23,18 @@ export class ArticleRateComponent implements OnInit {
   ngOnInit() {
     this.postEditForm = this.fb.group({
       'id' : [null, Validators.required],
-      'oid' : [null, Validators.required],
+      
       'author' : [this.getAuthor(), Validators.required],
-      'odate' : [null, Validators.required],
+      
       'rating' : [null, Validators.required],
       'comp_id' : [null, Validators.required],
       
     });
     this.id = this.route.snapshot.params['id'] || null ;
-    this.oid = this.route.snapshot.params['oid'] || null ;
-    this.rating = this.route.snapshot.params['rating'] || null ;
+ 
+    this.rating = this.route.snapshot.params['rating'] || 5 ;
     this.comp_id = this.route.snapshot.params['comp_id'] || null ;
-    this.odate = this.route.snapshot.params['odate'] || null ;
+    
     this.author = this.route.snapshot.params['author'] || null ;
     if (this.id) {
     this.getPostById(this.id);
@@ -45,9 +45,9 @@ export class ArticleRateComponent implements OnInit {
       post => {
       this.postEditForm.setValue({
         id: post.id,
-        oid: post.oid,
+        
         author: post.author,
-        odate: post.odate,
+       
         comp_id: post.comp_id,
         rating: post.rating
       });
@@ -55,8 +55,8 @@ export class ArticleRateComponent implements OnInit {
     );
   }
 
-  ratePost(id:number,title:string,author:string,image:string,publishdate:string,excert:string) {
-    this.config.ratePost(this.id,this.oid,this.author,this.odate,this.comp_id,this.rating).subscribe(
+  ratePoost(id:number,title:string,author:string,image:string,publishdate:string,excert:string) {
+    this.config.ratePoost(this.id,this.author,this.rating,this.comp_id).subscribe(
       () => this.getBack()
     );
   }

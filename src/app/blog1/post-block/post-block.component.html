@@ -1,5 +1,7 @@
  
-  <!--Post Block-->  
+
+ 
+<!--Post Block-->  
   <div class="post-block-content">
       <h3>{{post.title}}</h3>
       <p class="post-sub">By {{post.author}} | {{post.publishdate | date:'dd-MMM-yyyy'}}</p>
@@ -12,6 +14,7 @@
 
       <a routerLink="article-edit/{{post.id}}/{{post.title}}/{{post.author}}/{{post.image}}/{{post.publishdate}}/{{post.excert}}" class="button"><i class="ion ion-edit">Edit</i></a>
       <a routerLink="article-delete/{{post.id}}" class="button"><i class="ion ion-edit">delete</i></a>
+      <a routerLink="article-rate/{{post.id}}/{{post.author}}/{{post.rating}}/{{post.comp_id}}" class="button"><i class="ion ion-edit">Rate</i></a>
      
   </div>
 <!--End Post Block--> 

@@ -115,20 +115,20 @@ class ArticleEdit3(Resource):
          
                  
 class Articlefind(Resource):
-    def get(self, Article_id,title,author,image,publishdate,excert,price):
+    def get(self, Article_id,title,author,image,publishdate,excert,price,comp_id):
        cur=mysql.connection.cursor()
-       params=[str(Article_id)] ,[str(title)] ,[str(author)] ,[str(image)] ,[str(publishdate)] ,[str(excert)] ,[str(price)]
-       resultval=cur.execute("insert into bl values(%s,%s,%s,%s,%s,%s,%s)",params)
+       params=[str(Article_id)] ,[str(title)] ,[str(author)] ,[str(image)] ,[str(publishdate)] ,[str(excert)] ,[str(price)] ,[str(comp_id)]
+       resultval=cur.execute("insert into bl values(%s,%s,%s,%s,%s,%s,%s,%s)",params)
        mysql.connection.commit()
        cur.close()       
 
 class Articlefind1(Resource):
-    def get(self, Article_id,title,author,image,publishdate,excert):
+    def get(self,Article_id,title,author,image,publishdate,excert,price,comp_id):
        cur=mysql.connection.cursor()
-       params=[str(Article_id)] ,[str(title)] ,[str(author)] ,[str(image)] ,[str(publishdate)] ,[str(excert)]
-       resultval=cur.execute("insert into Lap values(%s,%s,%s,%s,%s,%s)",(params))
+       params=[str(Article_id)] ,[str(title)] ,[str(author)] ,[str(image)] ,[str(publishdate)] ,[str(excert)] ,[str(price)] ,[str(comp_id)]
+       resultval=cur.execute("insert into Lap values(%s,%s,%s,%s,%s,%s,%s,%s)",(params))
        mysql.connection.commit()
-       cur.close()  
+       cur.close()
 
 class BlogPage1(Resource):
     def get(self):
@@ -138,18 +138,37 @@ class BlogPage1(Resource):
        ud = cur.fetchall()
        return jsonify(ud);  
 
+
+class ArticleRate(Resource):
+    def get(self,id,author,rating,comp):
+        cur=mysql.connection.cursor()
+        params = [str(id)] ,[str(author)], [str(rating)], [str(comp)]
+        resultVal=cur.execute("insert into Rating values(%s,%s,%s,%s)",params)
+        mysql.connection.commit()
+        cur.close()
+
+class ArticleRate1(Resource):
+    def get(self,id,author,rating,comp):
+        cur=mysql.connection.cursor()
+        params = [str(id)] ,[str(author)], [str(rating)], [str(comp)]
+        resultVal=cur.execute("insert into RatingL values(%s,%s,%s,%s)",params)
+        mysql.connection.commit()
+        cur.close()
+
 api.add_resource(BlogPage1,'/Blog1') # Route_1
 api.add_resource(BlogPage,'/Blog') # Route_1
 api.add_resource(ArticleDelete,'/Blog/article-delete/<string:Article_id>') # Route_1
 api.add_resource(ArticleEdit,'/Blog/article-edit/<string:idi>/<string:title>/<string:author>/<string:image>/<string:publishdate>/<string:excert>') # Route_1
 api.add_resource(ArticleEdit1,'/Blog/article/<string:idi>')
-api.add_resource(Articlefind,'/Blog/article-buy/<string:Article_id>/<string:title>/<string:author>/<string:image>/<string:publishdate>/<string:excert>/<string:price>') 
+api.add_resource(ArticleRate,'/Blog/article-rate/<string:id>/<string:author>/<string:rating>/<string:comp>')
+api.add_resource(ArticleRate1,'/Blog1/article-rate/<string:id>/<string:author>/<string:rating>/<string:comp>')
+api.add_resource(Articlefind,'/Blog/article-buy/<string:Article_id>/<string:title>/<string:author>/<string:image>/<string:publishdate>/<string:excert>/<string:price>/<string:comp_id>') 
 api.add_resource(ArticleCreate,'/Blog/article-create/<string:idi>/<string:title>/<string:author>/<string:image>/<string:publishdate>/<string:excert>') 
 
 api.add_resource(ArticleDelete1,'/Blog1/article-delete/<string:Article_id>') # Route_1
 api.add_resource(ArticleEdit2,'/Blog1/article-edit/<string:idi>/<string:title>/<string:author>/<string:image>/<string:publishdate>/<string:excert>') # Route_1
 api.add_resource(ArticleEdit3,'/Blog1/article/<string:idi>')
-api.add_resource(Articlefind1,'/Blog1/article-buy/<string:Article_id>/<string:title>/<string:author>/<string:image>/<string:publishdate>/<string:excert>') 
+api.add_resource(Articlefind1,'/Blog1/article-buy/<string:Article_id>/<string:title>/<string:author>/<string:image>/<string:publishdate>/<string:excert>/<string:price>/<string:comp_id>') 
 #api.add_resource(ArticleCreate1,'/Blog1/article-create/<string:idi>/<string:title>/<string:author>/<string:image>/<string:publishdate>/<string:excert>') 
 
 if __name__ == '__main__':

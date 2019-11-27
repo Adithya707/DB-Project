@@ -13,7 +13,7 @@ import { Location } from '@angular/common';
 export class ArticleBuyComponent implements OnInit {
 
   postEditForm: FormGroup;
-  id: number;author:string;image:string;publishdate:string;title:string;excert:string;price:string;
+  id: number;author:string;image:string;publishdate:string;title:string;excert:string;price:string;comp_id:string
 
   constructor(private fb: FormBuilder,
     private auth: AuthenticationService,
@@ -31,6 +31,7 @@ export class ArticleBuyComponent implements OnInit {
       'excert' : [null, Validators.required],
       'image' : [null, Validators.required],
       'price':[null,Validators.required],
+      'comp_id':[null,Validators.required],
         });
     this.id = this.route.snapshot.params['id'] || null ;
     this.title = this.route.snapshot.params['title'] || null ;
@@ -39,6 +40,7 @@ export class ArticleBuyComponent implements OnInit {
     this.publishdate = this.route.snapshot.params['publishdate'] || null ;
     this.excert = this.route.snapshot.params['excert'] || null ;
     this.price = this.route.snapshot.params['price'] || 1000 ;
+    this.comp_id = this.route.snapshot.params['comp_id'] || null ;
     if (this.id) {
     this.getPostById(this.id);
    }
@@ -53,7 +55,8 @@ export class ArticleBuyComponent implements OnInit {
         publishdate: post.publishdate,
         excert: post.excert,
         image: post.image,
-        price:post.price
+        price:post.price,
+        comp_id:post.comp_id
       });
       }
     );
@@ -61,7 +64,7 @@ export class ArticleBuyComponent implements OnInit {
 
 
   buyPost(id:number,title:string,author:string,image:string,publishdate:string,excert:string) {
-    this.config.buyPost(this.id,this.title,this.author,this.image,this.publishdate,this.excert,this.price).subscribe(
+    this.config.buyPost(this.id,this.title,this.author,this.image,this.publishdate,this.excert,this.price,this.comp_id).subscribe(
       () => this.getBack()
     );
   }

@@ -121,9 +121,9 @@ export class ConfigService {
 
 
 
-  buyPost(id:number,title:string,author:string,image:string,publishdate:string,excert:string,price:string): Observable<Post> {
+  buyPost(id:number,title:string,author:string,image:string,publishdate:string,excert:string,price:string,comp_id:string): Observable<Post> {
      
-    return this.http.get<any>('http://127.0.0.1:5002/Blog/article-buy/'+String(id)+'/'+String(title)+'/'+String(author)+'/'+String(image)+'/'+String(publishdate)+'/'+String(excert)+'/'+String(price)).pipe(
+    return this.http.get<any>('http://127.0.0.1:5002/Blog/article-buy/'+String(id)+'/'+String(title)+'/'+String(author)+'/'+String(image)+'/'+String(publishdate)+'/'+String(excert)+'/'+String(price)+'/'+String(comp_id)).pipe(
       tap(
         post => console.log(post)
       ),
@@ -131,9 +131,9 @@ export class ConfigService {
     );
   }
 
-  ratePost(id:number,oid:string,author:string,odate:string,comp_id:string,rating:string): Observable<Post> {
+  ratePost(id:number,author:string,comp_id:string,rating:string): Observable<Post> {
      
-    return this.http.get<any>('http://127.0.0.1:5002/Blog/article-rate/'+String(id)+'/'+String(oid)+'/'+String(author)+'/'+String(odate)+'/'+String(comp_id)+'/'+String(rating)).pipe(
+    return this.http.get<any>('http://127.0.0.1:5002/Blog/article-rate/'+String(id)+'/'+String(author)+'/'+String(comp_id)+'/'+String(rating)).pipe(
       tap(
         post => console.log(post)
       ),
@@ -141,12 +141,21 @@ export class ConfigService {
     );
   }
 
-   
-
-
-  buyPoost(id:number,title:string,author:string,image:string,publishdate:string,excert:string): Observable<Post> {
+  ratePoost(id:number,author:string,comp_id:string,rating:string): Observable<Post> {
      
-    return this.http.get<any>('http://127.0.0.1:5002/Blog1/article-buy/'+String(id)+'/'+String(title)+'/'+String(author)+'/'+String(image)+'/'+String(publishdate)+'/'+String(excert)).pipe(
+    return this.http.get<any>('http://127.0.0.1:5002/Blog1/article-rate/'+String(id)+'/'+String(author)+'/'+String(comp_id)+'/'+String(rating)).pipe(
+      tap(
+        post => console.log(post)
+      ),
+      catchError(this.handleError('Update Post', []))
+    );
+  }
+ 
+
+
+  buyPoost(id:number,title:string,author:string,image:string,publishdate:string,excert:string,price:string,comp_id:string): Observable<Post> {
+     
+    return this.http.get<any>('http://127.0.0.1:5002/Blog1/article-buy/'+String(id)+'/'+String(title)+'/'+String(author)+'/'+String(image)+'/'+String(publishdate)+'/'+String(excert)+'/'+String(price)+'/'+String(comp_id)).pipe(
       tap(
         post => console.log(post)
       ),
