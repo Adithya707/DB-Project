@@ -16,7 +16,7 @@ const routes: Routes = [
   {path: 'article-buy/:id/:title/:author/:image/:publishdate/:excert', component: ArticleBuyComponent},
   {path: 'article-delete/:id', component: ArticleDeleteComponent},
   {path: 'article-buy/:id', component: ArticleBuyComponent},
-  {path: 'article-rate/:id/:author', component: ArticleRateComponent},
+  {path: 'article-rate/:id/:author/:comp_id', component: ArticleRateComponent},
 ];
 
 @NgModule({

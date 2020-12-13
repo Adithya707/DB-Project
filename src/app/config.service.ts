@@ -6,9 +6,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import { FormGroup, FormBuilder, Validators, NgForm } from '@angular/forms';
 import { PostComponent } from './post/post.component';
+import { environment } from 'src/environments/environment';
 
 const httpOptions = {
-  headers: new HttpHeaders({'Content-Type': 'application/json'})
+  headers: new HttpHeaders({'Content-Type': 'application/json',
+  })
 };
 
 @Injectable({
@@ -17,7 +19,8 @@ const httpOptions = {
 export class ConfigService {
 
   config = configuration;
-  apiUrl = 'api/posts';
+  apiUrl = environment.apiUrl;
+  emailUrl = environment.emailUrl;
 
 
   constructor(private http: HttpClient) { }
@@ -36,6 +39,15 @@ export class ConfigService {
 
   getConfig() {
     return this.config;
+  }
+
+  sendMessage(formData: NgForm): Observable<any> {
+    return this.http.post<any>('http://127.0.0.1:5002/Home(popup:contactus)', formData, httpOptions).pipe(
+      tap(
+        message => console.log(message)
+      ),
+      catchError(this.handleError('Sending Message', []))
+    );
   }
 
   getPosts(id:number): Observable<Post[]> {

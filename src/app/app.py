@@ -29,7 +29,7 @@ def hello():
 class BlogPage(Resource):
     def get(self):
        ud=[];
-       cur = mysql.connection.cursor()
+       cur= mysql.connection.cursor()
        resultVal=cur.execute("select *from bl");
        ud = cur.fetchall()
        return jsonify(ud);
@@ -43,12 +43,24 @@ class ArticleDelete(Resource):
        cur=mysql.connection.cursor()
        resultval=cur.execute("delete from bl where id=%s",[Article_id])
        mysql.connection.commit();
+       cur=mysql.connection.cursor()
+       resultval=cur.execute("delete from Rating where id=%s",[Article_id])
+       mysql.connection.commit();
+       cur=mysql.connection.cursor()
+       resultval=cur.execute("delete from Price where id=%s",[Article_id])
+       mysql.connection.commit();
        cur.close();
 
 class ArticleDelete1(Resource):
     def get(self, Article_id):
        cur=mysql.connection.cursor()
        resultval=cur.execute("delete from Lap where id=%s",[Article_id])
+       mysql.connection.commit();
+       cur=mysql.connection.cursor()
+       resultval=cur.execute("delete from RatingL where id=%s",[Article_id])
+       mysql.connection.commit();
+       cur=mysql.connection.cursor()
+       resultval=cur.execute("delete from priceL where id=%s",[Article_id])
        mysql.connection.commit();
        cur.close();                 
 
@@ -113,7 +125,16 @@ class ArticleEdit3(Resource):
         mysql.connection.commit()
         return jsonify(ud)
          
-                 
+class ArticleEdit4(Resource):
+    def post(self):
+        ud=[]
+        cur=mysql.connection.cursor()
+        res=cur.execute("select * from Lap where id=%s","2");
+        ud=cur.fetchall() 
+        print(request.data) 
+        mysql.connection.commit()
+        return jsonify(ud)
+
 class Articlefind(Resource):
     def get(self, Article_id,title,author,image,publishdate,excert,price,comp_id):
        cur=mysql.connection.cursor()
@@ -142,18 +163,36 @@ class BlogPage1(Resource):
 class ArticleRate(Resource):
     def get(self,id,author,rating,comp):
         cur=mysql.connection.cursor()
-        params = [str(id)] ,[str(author)], [str(rating)], [str(comp)]
-        resultVal=cur.execute("insert into Rating values(%s,%s,%s,%s)",params)
+        cu=mysql.connection.cursor()
+        p=[str(id)]
+        param=cu.execute("select iNum from Price where id=%s",p)
+        a=cu.fetchall()[0]
+        c=a['iNum']
+       
+        params = [str(id)] ,[str(author)], [str(rating)], [str(comp)] ,[str(c)]
+        
+        
+       
+        resultVal=cur.execute("insert into Rating values(%s,%s,%s,%s,%s)",params)
+      
+       
         mysql.connection.commit()
         cur.close()
+        cu.close()
 
 class ArticleRate1(Resource):
     def get(self,id,author,rating,comp):
         cur=mysql.connection.cursor()
-        params = [str(id)] ,[str(author)], [str(rating)], [str(comp)]
-        resultVal=cur.execute("insert into RatingL values(%s,%s,%s,%s)",params)
+        cu=mysql.connection.cursor()
+        p=[str(id)]
+        param=cu.execute("select iNum from priceL where id=%s",p)
+        a=cu.fetchall()[0]
+        c=a['iNum']
+        params = [str(id)] ,[str(author)], [str(rating)], [str(comp)], [str(c)]
+        resultVal=cur.execute("insert into RatingL values(%s,%s,%s,%s,%s)",params)
         mysql.connection.commit()
         cur.close()
+        cu.close()
 
 api.add_resource(BlogPage1,'/Blog1') # Route_1
 api.add_resource(BlogPage,'/Blog') # Route_1
@@ -170,6 +209,7 @@ api.add_resource(ArticleEdit2,'/Blog1/article-edit/<string:idi>/<string:title>/<
 api.add_resource(ArticleEdit3,'/Blog1/article/<string:idi>')
 api.add_resource(Articlefind1,'/Blog1/article-buy/<string:Article_id>/<string:title>/<string:author>/<string:image>/<string:publishdate>/<string:excert>/<string:price>/<string:comp_id>') 
 #api.add_resource(ArticleCreate1,'/Blog1/article-create/<string:idi>/<string:title>/<string:author>/<string:image>/<string:publishdate>/<string:excert>') 
+api.add_resource(ArticleEdit4,'/Home(popup:contactus)')
 
 if __name__ == '__main__':
    app.run(port=5002,debug=True)

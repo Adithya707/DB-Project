@@ -9,15 +9,15 @@ export class InMemoryDataService implements InMemoryDbService {
   constructor() { }
   createDb() {
     const users = [
-      { id: 11, firstName: 'rahul', lastName: 'gupta', email: 'test123@gmail.com', password: 'welcome',
-    bio: 'this is my bio', role: 'admin', image: 'user-1.jpg' },
-      { id: 12, firstName: 'rohan', lastName: 'gupta', email: 'test345@gmail.com', password: 'welcome',
-      bio: 'i am a subscriber', role: 'subscriber', image: 'user-2.jpg' }
+      { id: 11, firstName: 'Adithya', lastName: 'Acharya', email: 'test123@gmail.com', password: 'welcome',
+    bio: 'this is made by Adithya and Tushar by sheer grit and determination', role: 'admin', image: 'Adi.jpg' },
+      { id: 12, firstName: 'Tushar', lastName: 'Reddy', email: 'test345@gmail.com', password: 'welcome',
+      bio: 'this is made by Adithya and Tushar by sheer grit and determination', role: 'admin', image: 'Tushar.jpg' }
     ];
 
     const pages = [
       {id: 'intro',
-        tagline: 'SUCESS',
+        tagline: 'SUCCESS',
         title: 'How We Help You To Sell Your Product',
         description: 'This is introduction!',
       },
@@ -43,12 +43,12 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {id: 'gallery',
         tagline: 'We ❤ Doing amazing things',
-        title: 'AdTushar STUDIO',
+        title: 'Gadget Review System',
         description: 'We are and amazing company',
       },
       {id: 'footer',
         copyrighttext: 'Made with ❤ and sheer Hardwork',
-        developer: 'AdiTushar STUDIO',
+        developer: 'Gadget Review System',
         developerlink: 'http://admister.in',
       },
       {id: 'blog',
@@ -57,33 +57,34 @@ export class InMemoryDataService implements InMemoryDbService {
         description: 'We are and amazing company',
       },
       {id: 'header',
-        heading: 'AdiTushar Studios',
-        headingtext: 'This website was created using Angular 8',
+        heading: 'Gadget Review Site',
+        headingtext: 'This website is for WT Project',
         buttontext: 'Do some action!',
         buttonlink: '/Home',
-        image: 'banner-image-1.jpg'
+        image: 'ele.jpg'
       },
     ];
 
 
     const features = [
       {id: 1, icon: 'html5', title: 'HTML5 & CSS3',
-      description: 'Has ne tritani atomorum conclusionemque, in dolorum volumus cotidieque eum. At vis choro neglegentur iudico'},
+      description: 'The basic part of all front end is done via HTML and CSS via HTML for structuring and CSS for the designing purpose'},
       {id: 2, icon: 'bolt', title: 'PYTHON 2',
-      description: 'Cu vero ipsum vim, doctus facilisi sea in. Eam ex falli honestatis repudiandae, sit detracto mediocrem disputationi'},
+      description: 'Python constitutes the backend which is capable for handling HTTP request and the corresponding HTTP response'},
       {id: 3, icon: 'tablet', title: 'MYSQl DB',
-      description: 'Id porro tritani recusabo usu, eum intellegam consequuntur et. Fugit debet ea sit, an pro nemore vivendum'},
+      description: 'MYSQL is the database used ,it is very robust and easy to configure'},
       {id: 4, icon: 'rocket', title: 'ANGULAR',
-      description: 'Id porro tritani recusabo usu, eum intellegam consequuntur et. Fugit debet ea sit, an pro nemore vivendum'},
+      description: 'One of the most versatile way of making your Fornt end actually bringing it life by interaction of each of component'},
   ];
 
   const images = [
-    {id: 1, name: 'gallery-image-1.jpg'},
-    {id: 2, name: 'gallery-image-2.jpg'},
-    {id: 3, name: 'gallery-image-3.jpg'},
-    {id: 4, name: 'gallery-image-4.jpg'},
-    {id: 5, name: 'gallery-image-5.jpg'},
-    {id: 6, name: 'gallery-image-6.jpg'},
+    {id: 1, name: 'mob1.jpeg'},
+    {id: 2, name: 'mob2.jpg'},
+    {id: 3, name: 'lap1.jpeg'},
+    {id: 4, name: 'lap4.jpeg'},
+    {id: 5, name: 'mob5.jpg'},
+    {id: 6, name: 'lap5.jpg'},
+    {id: 6, name: 'mob4.jpg'},
 ];
 
 

@@ -779,12 +779,12 @@ h6 {
 /*------------------------------------------------------------------------------------------*/
 
 #banner {
-    background-size: cover;
+    background-size:auto;
 }
 
 #banner-content.row {
-    padding-top: 170px;
-    padding-bottom: 100px;
+    padding-top: 270px;
+    padding-bottom: 130px;
 }
 
 #banner h1 {
@@ -797,6 +797,7 @@ h6 {
     width: 30px;
     height: 5px;
     margin-top: 30px;
+    
 }
 
 
@@ -2390,14 +2391,16 @@ a:hover, #header.nav-solid nav a:hover {
 /* Navigation Colors when the Navigation is sticky and solid */ 
 
 #header.nav-solid, #header.nav-solid a, #header.nav-solid i, #nav-mobile ul li a {
-    color:#333;
+    color:green;
+    background-color: lightpink;
+    
 }
 
 
 /* Navigation Active State */
 
 #header.nav-solid .active {
-    color: #d2b356;
+    color: darkblue;
     border-color: #d2b356;
 }    
 
@@ -2453,8 +2456,8 @@ a:hover, #header.nav-solid nav a:hover {
 /* Banner Background and Text Colors */
 
 #banner {
-    background: url("assets/images/banner-images/banner-image-1.jpg") no-repeat center top;
-    background-size:contain;
+    background: url("assets/images/banner-images/bg3.jpg") no-repeat center top;
+    background-size:cover;
 }
 
 
@@ -2468,6 +2471,7 @@ body {
     font-size:15px;
     font-weight:normal;
     color:#111;
+    background-color:#EAE7DC ;
 }
 
 /* Logo, if you are using Fonts as Logo and not image

@@ -8,7 +8,7 @@
     color:#fff;    
 }
 .post-block-content {
-  background: #fff;
+  background: lightcyan;
   padding: 25px 0 25px 0;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);
   transition: all 0.2s ease-in-out 0s;
