@@ -6,6 +6,7 @@ from json import dumps
 from flask_jsonpify import jsonify
 from flask_cors import CORS
 import pymysql
+import json
 
 app = Flask(__name__)
 
@@ -129,9 +130,14 @@ class ArticleEdit4(Resource):
     def post(self):
         ud=[]
         cur=mysql.connection.cursor()
-        res=cur.execute("select * from Lap where id=%s","2");
-        ud=cur.fetchall() 
-        print(request.data) 
+        response_data = json.loads(request.data)
+        result = response_data.get('email')
+         
+        print(type(str(result))) 
+        params=str(response_data.get('email')), str(response_data.get('firstName')), str(response_data.get('lastName')), str(response_data.get('password'))
+        res=cur.execute("insert into user values(%s,%s,%s,%s)",(params))
+        ud=cur.fetchall()
+        
         mysql.connection.commit()
         return jsonify(ud)
 

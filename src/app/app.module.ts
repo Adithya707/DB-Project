@@ -78,6 +78,6 @@ HttpClientInMemoryWebApiModule.forRoot(
 )
   ],
   providers: [ConfigService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

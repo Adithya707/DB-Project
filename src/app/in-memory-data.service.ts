@@ -78,13 +78,24 @@ export class InMemoryDataService implements InMemoryDbService {
   ];
 
   const images = [
-    {id: 1, name: 'mob1.jpeg'},
-    {id: 2, name: 'mob2.jpg'},
-    {id: 3, name: 'lap1.jpeg'},
-    {id: 4, name: 'lap4.jpeg'},
-    {id: 5, name: 'mob5.jpg'},
-    {id: 6, name: 'lap5.jpg'},
-    {id: 6, name: 'mob4.jpg'},
+    {id: 1, name: 'L1.jpeg'},
+    {id: 2, name: 'P1.jpeg'},
+    {id: 3, name: 'L2.jpeg'},
+    {id: 4, name: 'P2.jpeg'},
+    {id: 5, name: 'L3.jpeg'},
+    {id: 6, name: 'P3.jpeg'},
+    {id: 7, name: 'L4.jpeg'},
+    {id: 8, name: 'P4.jpeg'},
+    {id: 9, name: 'L5.jpeg'},
+    {id: 10, name: 'P5.jpeg'},
+    {id:11, name: 'L6.jpeg'},
+    {id: 12, name: 'P6.jpeg'},
+    {id: 13, name: 'L7.jpeg'},
+    {id: 14, name: 'P7.jpeg'},
+    {id: 15, name: 'L8.jpeg'},
+    {id: 16, name: 'P8.jpeg'},
+    {id: 17, name: 'L9.jpeg'},
+    {id: 18, name: 'P0.jpeg'},
 ];
 
 
